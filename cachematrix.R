@@ -28,11 +28,11 @@ cacheSolve <- function(x, ...) {
     if(!is.null(t)) {
       message("Getting cached data")
       return(t)
-    }
+    } else {
     data <- x$get()
     t <- solve(data, ...)
     x$setInverse(t)
-    t
+    return(t)
+    }
   }
-  return(t)
 }
