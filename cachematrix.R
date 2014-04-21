@@ -11,10 +11,10 @@ makeCacheMatrix <- function(x = matrix()) {
     x <<- y
     t <<- NULL
   }
-  get <- function(x)
-  setInvert <- function(solve(t)) <<- solve
-  getInvert <- function(t)
-  list(set = set, get = get, setInvert = setInvert, getInvert = getInvert)
+  getInverse <- function(x)
+  setInverse <- function(solve(t)) <<- solve
+  getInverse <- function(t)
+  list(set = set, getInverse = getInverse, setInverse = setInverse, getInverse = getInverse)
 }
 
 ## The cacheSolve function checks if the inverse matrix has been calculated by
