@@ -11,10 +11,10 @@ makeCacheMatrix <- function(x = matrix()) {
     x <<- y
     t <<- NULL
   }
-  getInverse <- function(x)
+  get <- function(x)
   setInverse <- function(solve(t)) <<- solve
   getInverse <- function(t)
-  list(set = set, getInverse = getInverse, setInverse = setInverse, getInverse = getInverse)
+  list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
 
 ## The cacheSolve function checks if the inverse matrix has been calculated by
@@ -29,7 +29,7 @@ cacheSolve <- function(x, ...) {
       message("Getting cached data")
       return(t)
     } else {
-    data <- x$getInverse()
+    data <- x$get()
     t <- solve(data, ...)
     x$setInverse(t)
     return(t)
